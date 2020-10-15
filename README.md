@@ -1,6 +1,6 @@
 # StatusPage
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/status_page`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/status_page`. To experiment with that code, 
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -20,9 +20,31 @@ Or install it yourself as:
 
     $ gem install status_page
 
+
+## Official Docs
+
+[StatusPage API documentation](https://developer.statuspage.io/)
+
+
 ## Usage
 
-TODO: Write usage instructions here
+### Configuration
+Configure the client with your API key
+You can put this in an initailizer in Rails
+
+```ruby
+StatusPage.configure do |config|
+  config.api_key(YOUR_API_KEY)
+end
+```
+
+
+### Client
+
+`StatusPage::Api::Page.all` returns all the pages for your account
+`StatusPage::Api::Page.find(id)` returns a single page
+`StatusPage::Api::Page.update(id, page)` updates the page
+
 
 ## Development
 
@@ -32,8 +54,18 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/status_page.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nulty/status_page.
 
+### Testing
+
+The test suite should run normally. If the recorded API requests need to be updated, set an environment variable for the API key
+
+`STATUSPAGE_API_KEY=your-api-key bundle exec rspec`
+
+## Roadmap
+
+- Add a logger with null logging
+- Add url_encoded body option to configuration
 
 ## License
 
