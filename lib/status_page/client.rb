@@ -14,35 +14,24 @@ module StatusPage
       @api_version = StatusPage.config.api_version
     end
 
-    # rubocop: disable Metrics/MethodLength
     def get(resource, id = nil)
-      path = [@api_version, resource, id].compact.join('/')
-      uri = URI::HTTP.build(host: BASE_URL, path: "/#{path}")
-
-      request = Net::HTTP::Get.new(uri)
-      request.add_field('Authorization', "OAuth #{@api_key}")
-      request.add_field('Content-Type', 'application/json')
-
-      res = Net::HTTP.start(uri.hostname, use_ssl: true) do |http|
-        response = http.request(request)
-
-        response.body = JSON.parse(response.body)
-        response
-      end
-
-      yield(res) if block_given?
-      res
+      make_request(Net::HTTP::Get, resource, id)
     end
 
     def put(resource, id, body)
+      make_request(Net::HTTP::Put, resource, id, body)
+    end
+
+    # rubocop: disable Metrics/MethodLength
+    def make_request(http_method, resource, id, body = nil)
       path = [@api_version, resource, id].compact.join('/')
       uri = URI::HTTP.build(host: BASE_URL, path: "/#{path}")
 
-      request = Net::HTTP::Put.new(uri)
+      request = http_method.new(uri)
       request.add_field('Authorization', "OAuth #{@api_key}")
       request.add_field('Content-Type', 'application/json')
 
-      request.body = body
+      request.body = body if request.request_body_permitted?
 
       res = Net::HTTP.start(uri.hostname, use_ssl: true) do |http|
         response = http.request(request)
