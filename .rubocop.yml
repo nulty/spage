@@ -1,0 +1,18 @@
+Style/SymbolArray:
+  Enabled: false
+
+# Want to be able to assign config
+# without using =
+Style/TrivialAccessors:
+  Exclude:
+    - 'lib/status_page/config.rb'
+
+# Don't need to create frozen string const in specs
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'spec/**/*'
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+
