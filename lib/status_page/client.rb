@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'net/http'
+require 'json'
 
 BASE_URL = 'api.statuspage.io'
 
@@ -22,7 +23,10 @@ module StatusPage
       request.add_field('Content-Type', 'application/json')
 
       res = Net::HTTP.start(uri.hostname, use_ssl: true) do |http|
-        http.request(request)
+        response = http.request(request)
+
+        response.body = JSON.parse(response.body)
+        response
       end
 
       yield(res) if block_given?

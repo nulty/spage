@@ -15,7 +15,7 @@ RSpec.describe StatusPage::Client do
       end
 
       expect(res.code).to eq '401'
-      expect(res.body).to eq %({\"error\":\"Could not authenticate\"})
+      expect(res.body).to eq('error' => 'Could not authenticate')
     end
   end
 end
