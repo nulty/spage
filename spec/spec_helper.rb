@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
+require 'pry'
 # Set VCR && STATUSPAGE_API_KEY envvar when recording cassettes
-if ENV['VCR']
-  API_KEY = ENV.fetch('STATUSPAGE_API_KEY', raise(ArgumentError, 'No api key provided'))
-else
-  API_KEY = 'NULL'
-end
+API_KEY = if ENV['VCR']
+            ENV.fetch('STATUSPAGE_API_KEY') do
+              raise(ArgumentError, 'No api key provided')
+            end
+          else
+            ''
+          end
 
 require 'bundler/setup'
 require 'status_page'
 require 'vcr'
-require 'pry'
 
 StatusPage.configure do |c|
   c.api_key API_KEY

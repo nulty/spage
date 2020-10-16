@@ -9,6 +9,17 @@ require 'status_page/config'
 module StatusPage
   class Error < StandardError; end
 
+  autoload :Api, 'status_page/api'
+  autoload :Page, 'status_page/resources/page'
+
+  module Api
+    autoload :Page, 'status_page/api/page'
+  end
+
+  module Serializers
+    autoload :Page, 'status_page/serializers/page'
+  end
+
   def self.config
     @config ||= Config.new
   end
