@@ -61,10 +61,6 @@ module StatusPage
     attr_reader :id, :created_at, :updated_at, :name, :page_description, :headline, :branding, :subdomain, :domain, :url, :support_url, :hidden_from_search, :allow_page_subscribers, :allow_incident_subscribers, :allow_email_subscribers, :allow_sms_subscribers, :allow_rss_atom_feeds, :allow_webhook_subscribers, :notifications_from_email, :notifications_email_footer, :activity_score, :twitter_username, :viewers_must_be_team_members, :ip_restrictions, :city, :state, :country, :time_zone, :css_body_background_color, :css_font_color, :css_light_font_color, :css_greens, :css_yellows, :css_oranges, :css_blues, :css_reds, :css_border_color, :css_graph_color, :css_link_color, :css_no_data, :favicon_logo, :transactional_logo, :hero_cover, :email_logo, :twitter_logo
     # rubocop: enable Layout/LineLength
 
-    def self.build(attributes)
-      new(attributes)
-    end
-
     def date_parse(str)
       return str if str.nil?
       return str if str.is_a?(DateTime)
