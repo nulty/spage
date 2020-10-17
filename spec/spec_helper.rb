@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start do
+  enable_coverage :branch
+end
+
 require 'pry'
 # Set VCR && STATUSPAGE_API_KEY envvar when recording cassettes
 API_KEY = if ENV['VCR']
