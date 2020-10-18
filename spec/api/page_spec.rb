@@ -24,13 +24,13 @@ RSpec.describe StatusPage::Page do
 
   describe '#update' do
     context '200 page is updated' do
-      it 'parses all fields correctly' do
+      it 'updates the url' do
         page = VCR.use_cassette('find_page') do
           StatusPage::Api::Page.new.find('hmw075ww7tlq')
         end
         expect(page.url).to be_nil
 
-        page.instance_variable_set(:@url, 'https://example.com')
+        page.url = 'https://example.com'
 
         VCR.use_cassette('update_page_200_page_is_updated') do
           updated_page = StatusPage::Api::Page.new.update('hmw075ww7tlq', page)
@@ -40,13 +40,13 @@ RSpec.describe StatusPage::Page do
     end
 
     context '400 page is missing' do
-      it 'parses all fields correctly' do
+      it 'raises error when body has no "page" root property' do
         page = VCR.use_cassette('find_page') do
           StatusPage::Api::Page.new.find('hmw075ww7tlq')
         end
         expect(page.url).to be_nil
 
-        page.instance_variable_set(:@url, 'https://example.com')
+        page.url = 'https://example.com'
 
         VCR.use_cassette('update_page_400_page_is_missing') do
           expect {
