@@ -7,6 +7,7 @@ module StatusPage
     def initialize
       @api_endpoint = 'https://api.statuspage.io'
       @api_version = 'v1'
+      @api_key = nil
     end
 
     def api_key(api_key = nil)
