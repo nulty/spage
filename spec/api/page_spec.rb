@@ -48,11 +48,11 @@ RSpec.describe StatusPage::Page do
 
         page.instance_variable_set(:@url, 'https://example.com')
 
-        updated_page = VCR.use_cassette('update_page_400_page_is_missing') do
-          StatusPage::Api::Page.new.update('hmw075ww7tlq', page)
+        VCR.use_cassette('update_page_400_page_is_missing') do
+          expect {
+            StatusPage::Api::Page.new.update('hmw075ww7tlq', page)
+          }.to raise_error(StatusPage::Error, /page is missing/)
         end
-
-        expect(updated_page.body).to eq('error' => 'page is missing')
       end
     end
   end

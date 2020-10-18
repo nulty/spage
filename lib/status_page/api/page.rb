@@ -45,6 +45,8 @@ module StatusPage
         yield
       when Net::HTTPUnauthorized
         raise(Error, 'Unauthorized: wrong API Key')
+      when Net::HTTPBadRequest
+        raise(Error, response.body)
       end
     end
   end
