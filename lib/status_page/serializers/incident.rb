@@ -33,7 +33,8 @@ module StatusPage
       def ivars(update)
         if update
           @incident.instance_variables.select do |name|
-            update_attrs.include?(name[1..-1])
+            processed_name = name[1..-1]
+            update_attrs.include?(processed_name) && !@incident.send(processed_name).nil?
           end
         else
           @incident.instance_variables
