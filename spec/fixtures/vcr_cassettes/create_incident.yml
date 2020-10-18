@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/incidents
+    body:
+      encoding: UTF-8
+      string: '{"incident":{"name":"Created an Incident"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - f0cc2c9c-d43d-4220-8e39-15801e11d558
+      X-Runtime:
+      - '0.188352'
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"gz[3a9c2cb6c7a00c03b7704f9de96fb3a3]"
+      X-Statuspage-Version:
+      - 8e0fea0cccd90378a93af62040c22755afa1104c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"bcb36ypp1bmg","components":[],"created_at":"2020-10-18T17:48:08Z","impact":"none","impact_override":null,"incident_updates":[{"id":"z9lk0ns6hsjn","incident_id":"bcb36ypp1bmg","affected_components":null,"body":"We
+        are currently investigating this issue.","created_at":"2020-10-18T17:48:08.145Z","custom_tweet":null,"deliver_notifications":true,"display_at":"2020-10-18T17:48:08.145Z","status":"investigating","tweet_id":null,"twitter_updated_at":null,"updated_at":"2020-10-18T17:48:08.145Z","wants_twitter_update":false}],"metadata":{},"monitoring_at":null,"name":"Created
+        an Incident","page_id":"hmw075ww7tlq","postmortem_body":null,"postmortem_body_last_updated_at":null,"postmortem_ignored":false,"postmortem_notified_subscribers":false,"postmortem_notified_twitter":false,"postmortem_published_at":null,"resolved_at":null,"scheduled_auto_completed":false,"scheduled_auto_in_progress":false,"scheduled_for":null,"scheduled_remind_prior":false,"scheduled_reminded_at":null,"scheduled_until":null,"shortlink":"http://stspg.io/ky9rcr4xxbb4","status":"investigating","updated_at":"2020-10-18T17:48:08Z"}'
+  recorded_at: Sun, 18 Oct 2020 17:48:08 GMT
+recorded_with: VCR 6.0.0

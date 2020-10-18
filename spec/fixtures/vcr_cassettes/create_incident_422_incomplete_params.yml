@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/incidents
+    body:
+      encoding: UTF-8
+      string: '{"incident":{"components":null,"impact_override":null,"metadata":null,"name":null,"scheduled_auto_completed":null,"scheduled_auto_in_progress":null,"scheduled_for":null,"scheduled_remind_prior":null,"scheduled_until":null,"status":null,"deliver_notifications":null,"auto_transition_deliver_notifications_at_end":null,"auto_transition_deliver_notifications_at_start":null,"auto_transition_to_maintenance_state":null,"auto_transition_to_operational_state":null,"auto_tweet_at_beginning":null,"auto_tweet_on_completion":null,"auto_tweet_on_creation":null,"auto_tweet_one_hour_before":null,"backfill_date":null,"backfilled":null,"body":null,"component_ids":null,"scheduled_auto_transition":null}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 21d4e5f8-2d35-4704-b129-8d93076a2f59
+      X-Runtime:
+      - '0.045104'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":["Name can''t be blank"]}'
+  recorded_at: Sun, 18 Oct 2020 17:35:49 GMT
+recorded_with: VCR 6.0.0

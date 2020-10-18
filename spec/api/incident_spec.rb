@@ -29,6 +29,34 @@ RSpec.describe StatusPage::Api::Incident do
     end
   end
 
+  describe '#create' do
+    context '422 incomplete params' do
+      it 'raises error: becuase name can\'t be blank' do
+        incident = StatusPage::Incident.new({})
+
+        expect {
+          VCR.use_cassette('create_incident_422_incomplete_params') do
+            StatusPage::Api::Incident.new
+              .create(incident, page_id: 'hmw075ww7tlq')
+          end
+        }.to raise_error(StatusPage::Error, /Name can't be blank/)
+      end
+    end
+
+    context '201 incident created' do
+      it 'creates a new incident for component on a page' do
+        incident = StatusPage::Incident.new('name' => 'Created an Incident')
+
+        VCR.use_cassette('create_incident') do
+          created_incident = StatusPage::Api::Incident.new
+            .create(incident, page_id: 'hmw075ww7tlq')
+
+          expect(created_incident.name).to eq('Created an Incident')
+        end
+      end
+    end
+  end
+
   describe '#update' do
     context '200 incident is updated' do
       it 'updates status from investigating to identified' do

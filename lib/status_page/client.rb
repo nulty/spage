@@ -22,6 +22,10 @@ module StatusPage
       make_request(Net::HTTP::Put, resource, id, body)
     end
 
+    def post(resource, body)
+      make_request(Net::HTTP::Post, resource, id = nil, body)
+    end
+
     # rubocop: disable Metrics/MethodLength
     def make_request(http_method, resource, id, body = nil)
       path = [@api_version, resource, id].compact.join('/')
