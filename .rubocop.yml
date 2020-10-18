@@ -15,4 +15,10 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
 
+# allow "expect { \n ..}"
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
