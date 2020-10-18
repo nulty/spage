@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 $LOAD_PATH << File.expand_path('./lib')
+
+require 'json'
+require 'time'
+
 require 'status_page/version'
 require 'status_page/client'
 require 'status_page/config'
