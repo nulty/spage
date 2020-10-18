@@ -34,7 +34,7 @@ RSpec.describe StatusPage::Page do
 
         VCR.use_cassette('update_page_200_page_is_updated') do
           updated_page = StatusPage::Api::Page.new.update('hmw075ww7tlq', page)
-          expect(updated_page.body['url']).to eq('https://example.com')
+          expect(updated_page.url).to eq('https://example.com')
         end
       end
     end

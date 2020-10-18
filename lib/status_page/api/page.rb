@@ -29,7 +29,11 @@ module StatusPage
 
       def update(id, page)
         json = StatusPage::Serializers::Page.new(page, update: true).to_json
-        client.put(:pages, id, json)
+        response = client.put(:pages, id, json)
+
+        handle_response(response) do
+          StatusPage::Page.new(response.body)
+        end
       end
     end
 
