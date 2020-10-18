@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/incidents/72vkct8p5tk8
+    body:
+      encoding: UTF-8
+      string: '{"incident":{"components":[{"id":"3sxkhns1ndms","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-08-27T15:35:06Z","group":false,"name":"Results","description":"Results
+        are being updated in time","position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+6c823ccd-ae20-4e96-a0ef-7b396459c04c@notifications.statuspage.io"}],"impact_override":null,"metadata":{},"name":"New
+        Incident","scheduled_auto_completed":false,"scheduled_auto_in_progress":false,"scheduled_for":null,"scheduled_remind_prior":false,"scheduled_until":null,"status":"identified","deliver_notifications":null,"auto_transition_deliver_notifications_at_end":null,"auto_transition_deliver_notifications_at_start":null,"auto_transition_to_maintenance_state":null,"auto_transition_to_operational_state":null,"auto_tweet_at_beginning":null,"auto_tweet_on_completion":null,"auto_tweet_on_creation":null,"auto_tweet_one_hour_before":null,"backfill_date":null,"backfilled":null,"body":null,"component_ids":null,"scheduled_auto_transition":null}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 0eb86be9-f295-4fae-abe4-23908a39778b
+      X-Runtime:
+      - '0.026763'
+      Connection:
+      - close
+      X-Statuspage-Version:
+      - 8e0fea0cccd90378a93af62040c22755afa1104c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"incident[components] is invalid"}'
+  recorded_at: Sun, 18 Oct 2020 15:20:35 GMT
+recorded_with: VCR 6.0.0

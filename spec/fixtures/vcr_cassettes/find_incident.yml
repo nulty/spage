@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/incidents/72vkct8p5tk8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - e4cd2f4e-9e89-4dfa-96a1-bdcf6ddba7e3
+      X-Runtime:
+      - '0.042179'
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"gz[811c5ae7bd173fa4dafbd85baa4f58fa]"
+      X-Statuspage-Version:
+      - 8e0fea0cccd90378a93af62040c22755afa1104c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"72vkct8p5tk8","components":[{"id":"3sxkhns1ndms","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-08-27T15:35:06Z","group":false,"name":"Results","description":"Results
+        are being updated in time","position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+6c823ccd-ae20-4e96-a0ef-7b396459c04c@notifications.statuspage.io"}],"created_at":"2020-10-17T14:28:42Z","impact":"none","impact_override":null,"incident_updates":[{"id":"4btnzrc2kf8j","incident_id":"72vkct8p5tk8","affected_components":[{"code":"3sxkhns1ndms","name":"Results","old_status":"operational","new_status":"operational"}],"body":"We
+        are investigating this incident.","created_at":"2020-10-17T14:28:42.982Z","custom_tweet":null,"deliver_notifications":false,"display_at":"2020-10-17T14:28:42.982Z","status":"investigating","tweet_id":null,"twitter_updated_at":null,"updated_at":"2020-10-17T14:28:42.982Z","wants_twitter_update":false}],"metadata":{},"monitoring_at":null,"name":"New
+        Incident","page_id":"hmw075ww7tlq","postmortem_body":null,"postmortem_body_last_updated_at":null,"postmortem_ignored":false,"postmortem_notified_subscribers":false,"postmortem_notified_twitter":false,"postmortem_published_at":null,"resolved_at":null,"scheduled_auto_completed":false,"scheduled_auto_in_progress":false,"scheduled_for":null,"scheduled_remind_prior":false,"scheduled_reminded_at":null,"scheduled_until":null,"shortlink":"http://stspg.io/lkf5psn6mk0s","status":"investigating","updated_at":"2020-10-17T14:28:42Z"}'
+  recorded_at: Sat, 17 Oct 2020 15:32:53 GMT
+recorded_with: VCR 6.0.0

@@ -15,13 +15,16 @@ module StatusPage
 
   autoload :Api, 'status_page/api'
   autoload :Page, 'status_page/resources/page'
+  autoload :Incident, 'status_page/resources/incident'
 
   module Api
     autoload :Page, 'status_page/api/page'
+    autoload :Incident, 'status_page/api/incident'
   end
 
   module Serializers
     autoload :Page, 'status_page/serializers/page'
+    autoload :Incident, 'status_page/serializers/incident'
   end
 
   def self.config
