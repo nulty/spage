@@ -15,6 +15,18 @@ RSpec.describe StatusPage::Api::Incident do
     end
   end
 
+  describe '#all' do
+    it 'returns a collection of Incidents' do
+      VCR.use_cassette('unresolved_incidents') do
+        incidents = StatusPage::Api::Incident.new.all(page_id: 'hmw075ww7tlq')
+
+        expect(incidents).to respond_to(:each)
+        expect(incidents.first).to be_a(StatusPage::Incident)
+        expect(incidents.first.id).to eq('72vkct8p5tk8')
+      end
+    end
+  end
+
   describe '#find' do
     it 'returns an Incident' do
       VCR.use_cassette('find_incident') do
@@ -109,21 +121,22 @@ RSpec.describe StatusPage::Api::Incident do
         end
       end
     end
-    # context '400 page is missing' do
-    #   it 'parses all fields correctly' do
-    #     page = VCR.use_cassette('find_page') do
-    #       StatusPage::Api::Page.new.find('hmw075ww7tlq')
-    #     end
-    #     expect(page.url).to be_nil
-
-    #     page.instance_variable_set(:@url, 'https://example.com')
-
-    #     updated_page = VCR.use_cassette('update_page_400_page_is_missing') do
-    #       StatusPage::Api::Page.new.update('hmw075ww7tlq', page)
-    #     end
-
-    #     expect(updated_page.body).to eq('error' => 'page is missing')
-    #   end
-    # end
   end
+
+  # describe '#delete' do
+  #   it 'parses all fields correctly' do
+  #     page = VCR.use_cassette('find_page') do
+  #       StatusPage::Api::Page.new.find('hmw075ww7tlq')
+  #     end
+  #     expect(page.url).to be_nil
+
+  #     page.instance_variable_set(:@url, 'https://example.com')
+
+  #     updated_page = VCR.use_cassette('update_page_400_page_is_missing') do
+  #       StatusPage::Api::Page.new.update('hmw075ww7tlq', page)
+  #     end
+
+  #     expect(updated_page.body).to eq('error' => 'page is missing')
+  #   end
+  # end
 end

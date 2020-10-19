@@ -19,6 +19,16 @@ module StatusPage
         end
       end
 
+      def unresolved(page_id:)
+        response = client.get("pages/#{page_id}/incidents/unresolved")
+
+        handle_response(response) do
+          response.body.map do |incident|
+            StatusPage::Incident.new(incident)
+          end
+        end
+      end
+
       def find(page_id:, id:)
         response = client.get("pages/#{page_id}/incidents", id)
 
