@@ -1,6 +1,6 @@
-# StatusPage
+# Spage
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/status_page`. To experiment with that code, 
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/spage`. To experiment with that code, 
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'status_page'
+gem 'spage'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install status_page
+    $ gem install spage
 
 
 ## Official Docs
@@ -33,7 +33,7 @@ Configure the client with your API key
 You can put this in an initailizer in Rails
 
 ```ruby
-StatusPage.configure do |config|
+Spage.configure do |config|
   config.api_key(YOUR_API_KEY)
 end
 ```
@@ -41,9 +41,9 @@ end
 
 ### Client
 
-`StatusPage::Api::Page.all` returns all the pages for your account
-`StatusPage::Api::Page.find(id)` returns a single page
-`StatusPage::Api::Page.update(id, page)` updates the page
+`Spage::Api::Page.all` returns all the pages for your account
+`Spage::Api::Page.find(id)` returns a single page
+`Spage::Api::Page.update(id, page)` updates the page
 
 
 ## Development
@@ -54,7 +54,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nulty/status_page.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nulty/spage.
 
 ### Testing
 

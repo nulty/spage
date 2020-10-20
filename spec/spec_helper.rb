@@ -16,10 +16,10 @@ API_KEY = if ENV['VCR']
           end
 
 require 'bundler/setup'
-require 'status_page'
+require 'spage'
 require 'vcr'
 
-StatusPage.configure do |c|
+Spage.configure do |c|
   c.api_key API_KEY
 end
 

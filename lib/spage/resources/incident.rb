@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StatusPage
+module Spage
   # Page resource in statuspage.io
   #
   class Incident

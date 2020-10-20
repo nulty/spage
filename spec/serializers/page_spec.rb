@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe StatusPage::Serializers::Page do
+RSpec.describe Spage::Serializers::Page do
   let(:date) { '2020-10-02T10:00:00+00:00' }
   let(:page) do
-    StatusPage::Page.new(
+    Spage::Page.new(
       'created_at' => DateTime.parse(date),
       'css_reds' => { 'thing' => { '5' => :sting, 'updated_at' => date } }
     )

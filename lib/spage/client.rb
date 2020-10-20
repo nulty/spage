@@ -5,13 +5,13 @@ require 'json'
 
 BASE_URL = 'api.statuspage.io'
 
-module StatusPage
+module Spage
   # HTTP client for making requests to statuspage.io
   #
   class Client
     def initialize
-      @api_key = StatusPage.config.api_key
-      @api_version = StatusPage.config.api_version
+      @api_key = Spage.config.api_key
+      @api_version = Spage.config.api_version
     end
 
     def get(resource, id = nil)
