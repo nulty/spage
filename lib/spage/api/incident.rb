@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StatusPage
+module Spage
   # Api Module
   #
   module Api
@@ -14,7 +14,7 @@ module StatusPage
 
         handle_response(response) do
           response.body.map do |incident|
-            StatusPage::Incident.new(incident)
+            Spage::Incident.new(incident)
           end
         end
       end
@@ -24,7 +24,7 @@ module StatusPage
 
         handle_response(response) do
           response.body.map do |incident|
-            StatusPage::Incident.new(incident)
+            Spage::Incident.new(incident)
           end
         end
       end
@@ -33,28 +33,28 @@ module StatusPage
         response = client.get("pages/#{page_id}/incidents", id)
 
         handle_response(response) do
-          StatusPage::Incident.new(response.body)
+          Spage::Incident.new(response.body)
         end
       end
 
       def create(incident, page_id:)
-        json = StatusPage::Serializers::Incident.new(incident,
+        json = Spage::Serializers::Incident.new(incident,
                                                      update: true).to_json
 
         response = client.post("pages/#{page_id}/incidents", json)
 
         handle_response(response) do
-          StatusPage::Incident.new(response.body)
+          Spage::Incident.new(response.body)
         end
       end
 
       def update(incident, page_id:, id:)
-        json = StatusPage::Serializers::Incident.new(incident,
+        json = Spage::Serializers::Incident.new(incident,
                                                      update: true).to_json
         response = client.put("pages/#{page_id}/incidents", id, json)
 
         handle_response(response) do
-          StatusPage::Incident.new(response.body)
+          Spage::Incident.new(response.body)
         end
       end
     end

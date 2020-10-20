@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module StatusPage
-  # Global Configuration for the StatusPage Client
+module Spage
+  # Global Configuration for the Spage Client
   #
   class Config
     def initialize

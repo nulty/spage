@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-RSpec.describe StatusPage::Client do
+RSpec.describe Spage::Client do
   around do |example|
-    StatusPage.configure { |c| c.api_key 'invalid_key' }
+    Spage.configure { |c| c.api_key 'invalid_key' }
     example.run
-    StatusPage.configure { |c| c.api_key API_KEY }
+    Spage.configure { |c| c.api_key API_KEY }
   end
 
   describe '#get' do

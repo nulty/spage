@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StatusPage
+module Spage
   # Api Module
   #
   module Api
@@ -14,7 +14,7 @@ module StatusPage
 
         handle_response(response) do
           response.body.map do |page|
-            StatusPage::Page.new(page)
+            Spage::Page.new(page)
           end
         end
       end
@@ -23,16 +23,16 @@ module StatusPage
         response = client.get(:pages, id)
 
         handle_response(response) do
-          StatusPage::Page.new(response.body)
+          Spage::Page.new(response.body)
         end
       end
 
       def update(id, page)
-        json = StatusPage::Serializers::Page.new(page, update: true).to_json
+        json = Spage::Serializers::Page.new(page, update: true).to_json
         response = client.put(:pages, id, json)
 
         handle_response(response) do
-          StatusPage::Page.new(response.body)
+          Spage::Page.new(response.body)
         end
       end
     end

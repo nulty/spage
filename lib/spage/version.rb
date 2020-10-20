@@ -1,3 +1,3 @@
-module StatusPage
+module Spage
   VERSION = "0.1.0"
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StatusPage
+module Spage
   module Serializers
     # Serializer for the Page resource
     #

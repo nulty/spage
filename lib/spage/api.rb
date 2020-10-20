@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module StatusPage
+module Spage
   # Mixin for API classes
   #
   module Api
     def client
-      @client ||= StatusPage::Client.new
+      @client ||= Spage::Client.new
     end
   end
 end
