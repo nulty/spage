@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Iain McNulty"]
   spec.email         = ["iain@inulty.com"]
 
-  spec.summary       = %q{Ruby Client for using the Spage API}
-  spec.description   = %q{Ruby client for making requests the Spage API}
+  spec.summary       = %q{Ruby Client for using the statuspage.io API}
+  spec.description   = %q{Ruby client for making requests the statuspage.io API}
   spec.homepage      = "https://github.com/nulty/spage"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
