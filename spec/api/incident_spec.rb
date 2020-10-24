@@ -126,7 +126,7 @@ RSpec.describe Spage::Api::Incident do
   describe '#unresolved_incidents' do
     context '200 success' do
       it 'returns list of unresolved incidents' do
-        incidents = VCR.use_cassette('incidents/unresolved', record: :all) do
+        incidents = VCR.use_cassette('incidents/unresolved') do
           Spage::Api::Incident.new.unresolved(
             page_id: 'hmw075ww7tlq'
           )
