@@ -140,6 +140,20 @@ RSpec.describe Spage::Api::Incident do
     end
   end
 
+  describe '#active_maintenance' do
+    context '200 success' do
+      it 'returns list of active maintenance incidents' do
+        incidents = VCR.use_cassette('incidents/active_maintenance') do
+          Spage::Api::Incident.new.active_maintenance(
+            page_id: 'hmw075ww7tlq'
+          )
+        end
+
+        expect(incidents.all? { |i| i.status == 'in_progress' }).to be(true)
+      end
+    end
+  end
+
   # describe '#delete' do
   #   it 'parses all fields correctly' do
   #     page = VCR.use_cassette('find_page') do

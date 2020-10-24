@@ -29,6 +29,16 @@ module Spage
         end
       end
 
+      def active_maintenance(page_id:)
+        response = client.get("pages/#{page_id}/incidents/active_maintenance")
+
+        handle_response(response) do
+          response.body.map do |incident|
+            Spage::Incident.new(incident)
+          end
+        end
+      end
+
       def find(page_id:, id:)
         response = client.get("pages/#{page_id}/incidents", id)
 
