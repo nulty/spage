@@ -36,6 +36,16 @@ module Spage
           Spage::Component.new(response.body)
         end
       end
+
+      def update(component, page_id:, id:)
+        json = Spage::Serializers::Component.new(component,
+                                                 update: true).to_json
+        response = client.put("pages/#{page_id}/components", id, json)
+
+        handle_response(response) do
+          Spage::Component.new(response.body)
+        end
+      end
     end
 
     private

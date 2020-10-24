@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components/72vkct8p5tk8
+    body:
+      encoding: UTF-8
+      string: '{"component":{"description":"Results are being updated in time","status":"identified","name":"Results","only_show_if_degraded":false,"showcase":true}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 999bd973-be99-4a9d-8c84-635fa839175e
+      X-Runtime:
+      - '0.036467'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Couldn''t find Component with [WHERE \"components\".\"page_id\"
+        = $1 AND \"components\".\"code\" = $2]"}'
+  recorded_at: Sat, 24 Oct 2020 14:17:06 GMT
+- request:
+    method: put
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components/3sxkhns1ndms
+    body:
+      encoding: UTF-8
+      string: '{"component":{"description":"Results are being updated in time","status":"major_outag","name":"Results","only_show_if_degraded":false,"showcase":true}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - a9c9550b-d1ac-48c0-8808-2f7e92da524a
+      X-Runtime:
+      - '0.026961'
+      Connection:
+      - close
+      X-Statuspage-Version:
+      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"component[status] does not have a valid value"}'
+  recorded_at: Sat, 24 Oct 2020 14:30:46 GMT
+recorded_with: VCR 6.0.0

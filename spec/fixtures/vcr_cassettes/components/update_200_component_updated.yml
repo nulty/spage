@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components/72vkct8p5tk8
+    body:
+      encoding: UTF-8
+      string: '{"component":{"description":"Results are being updated in time","status":"major_outage","name":"Results","only_show_if_degraded":false,"showcase":true}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 8d5a5817-1fa9-40d0-a541-4a86775066b9
+      X-Runtime:
+      - '0.029917'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Couldn''t find Component with [WHERE \"components\".\"page_id\"
+        = $1 AND \"components\".\"code\" = $2]"}'
+  recorded_at: Sat, 24 Oct 2020 14:37:21 GMT
+- request:
+    method: put
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components/3sxkhns1ndms
+    body:
+      encoding: UTF-8
+      string: '{"component":{"description":"Results are being updated in time","status":"major_outage","name":"Results","only_show_if_degraded":false,"showcase":true}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 91288e52-075a-4f47-87a5-1e9dce093449
+      X-Runtime:
+      - '0.067000'
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"gz[27904579d9a3d3837d96df7ee91a875b]"
+      X-Statuspage-Version:
+      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"3sxkhns1ndms","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-10-24T14:26:37Z","group":false,"name":"Results","description":"Results
+        are being updated in time","position":1,"status":"major_outage","showcase":true,"only_show_if_degraded":false,"automation_email":"component+6c823ccd-ae20-4e96-a0ef-7b396459c04c@notifications.statuspage.io"}'
+  recorded_at: Sat, 24 Oct 2020 14:38:04 GMT
+recorded_with: VCR 6.0.0

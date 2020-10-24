@@ -69,4 +69,55 @@ RSpec.describe Spage::Api::Component do
       end
     end
   end
+
+  describe '#update' do
+    context '200 component is updated' do
+      it 'updates status from investigating to identified' do
+        component = VCR.use_cassette('components/find') do
+          Spage::Api::Component.new.find(
+            page_id: 'hmw075ww7tlq',
+            id: '3sxkhns1ndms'
+          )
+        end
+        expect(component.status).to eq('operational')
+
+        component.status = 'major_outage'
+
+        updated = VCR.use_cassette('components/update_200_component_updated') do
+          Spage::Api::Component.new
+            .update(component, page_id: 'hmw075ww7tlq', id: '3sxkhns1ndms')
+        end
+
+        expect(updated.id).to eq('3sxkhns1ndms')
+        expect(updated.status).to eq('major_outage')
+      end
+    end
+
+    context '400 components is invalid ' do
+      it 'errors when the components object is invalid' do
+        component = VCR.use_cassette('components/find') do
+          Spage::Api::Component.new.find(
+            page_id: 'hmw075ww7tlq',
+            id: '3sxkhns1ndms'
+          )
+        end
+
+        expect(component.status).to eq('operational')
+
+        component.status = 'major_outag'
+
+        VCR.use_cassette('components/update_400_components_invalid') do
+          expect {
+            Spage::Api::Component.new
+              .update(component,
+                      page_id: 'hmw075ww7tlq',
+                      id: '3sxkhns1ndms')
+          }.to raise_error(
+            Spage::Error,
+            /component\[status\] does not have a valid value/
+          )
+        end
+      end
+    end
+  end
 end
