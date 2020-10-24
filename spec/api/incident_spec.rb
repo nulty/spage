@@ -123,6 +123,23 @@ RSpec.describe Spage::Api::Incident do
     end
   end
 
+  describe '#unresolved_incidents' do
+    context '200 success' do
+      it 'returns list of unresolved incidents' do
+        incidents = VCR.use_cassette('incidents/unresolved', record: :all) do
+          Spage::Api::Incident.new.unresolved(
+            page_id: 'hmw075ww7tlq'
+          )
+        end
+        expect(incidents.length).to eq(3)
+
+        expect(incidents.map(&:status)).to(
+          match_array(%w[investigating identified monitoring])
+        )
+      end
+    end
+  end
+
   # describe '#delete' do
   #   it 'parses all fields correctly' do
   #     page = VCR.use_cassette('find_page') do
