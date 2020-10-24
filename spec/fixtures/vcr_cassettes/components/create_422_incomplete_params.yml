@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components
+    body:
+      encoding: UTF-8
+      string: '{"component":{"description":"asasdf"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - b5181c2a-6830-4b2c-8911-7cfd4a7745a8
+      X-Runtime:
+      - '0.047824'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":["Name can''t be blank"]}'
+  recorded_at: Sat, 24 Oct 2020 13:46:44 GMT
+recorded_with: VCR 6.0.0

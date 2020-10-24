@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components
+    body:
+      encoding: UTF-8
+      string: '{"component":{}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - dc799382-2063-4d5d-859c-95632f2262ae
+      X-Runtime:
+      - '0.021679'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Parameter component is required"}'
+  recorded_at: Sat, 24 Oct 2020 13:49:07 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components
+    body:
+      encoding: UTF-8
+      string: '{"component":{"name":"Created an Component"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 2de4a1c8-327c-4db4-8c3e-e6b1242b3e32
+      X-Runtime:
+      - '0.111483'
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"gz[36e1747715ac29a9f06646b28b8ac76f]"
+      X-Statuspage-Version:
+      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"9zcskh91c4f0","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-10-24T13:53:01Z","updated_at":"2020-10-24T13:53:01Z","group":false,"name":"Created
+        an Component","description":null,"position":3,"status":"operational","showcase":false,"only_show_if_degraded":false,"automation_email":"component+7b94ff27-394e-4f08-a2ba-27ba51824bf2@notifications.statuspage.io"}'
+  recorded_at: Sat, 24 Oct 2020 13:53:01 GMT
+recorded_with: VCR 6.0.0
