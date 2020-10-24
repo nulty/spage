@@ -1,8 +1,6 @@
 # Spage
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/spage`. To experiment with that code, 
-
-TODO: Delete this and the text above, and describe your gem
+Spage is a Ruby client for integrating Statuspage.io into your ruby app. The idea is for it to be more than just a set of http requests to the server. It tries to model the data on the server for you so you don't have to.
 
 ## Installation
 
@@ -38,12 +36,11 @@ Spage.configure do |config|
 end
 ```
 
-
 ### Client
 
-`Spage::Api::Page.all` returns all the pages for your account
-`Spage::Api::Page.find(id)` returns a single page
-`Spage::Api::Page.update(id, page)` updates the page
+`Spage::Api::Page.new.all` returns all the pages for your account
+`Spage::Api::Page.new.find(id)` returns a single page
+`Spage::Api::Page.new.update(id, page)` updates the page
 
 
 ## Development
@@ -58,14 +55,16 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/nulty/
 
 ### Testing
 
-The test suite should run normally. If the recorded API requests need to be updated, set an environment variable for the API key
+The test suite should run normally. If the recorded API requests need to be updated, set an environment variable for the API key and pass the `record: :all` to the use_cassette function you want to re-record.
 
-`STATUSPAGE_API_KEY=your-api-key bundle exec rspec`
+`VCR=1 STATUSPAGE_API_KEY=your-api-key bundle exec rspec`
 
 ## Roadmap
 
 - Add a logger with null logging
 - Add url_encoded body option to configuration
+- Validations on the resources
+- Respect HTTP caching like [`faraday/http_cache`](https://github.com/sourcelevel/faraday-http-cache)
 
 ## License
 
