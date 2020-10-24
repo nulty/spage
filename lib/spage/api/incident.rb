@@ -59,7 +59,7 @@ module Spage
 
       def create(incident, page_id:)
         json = Spage::Serializers::Incident.new(incident,
-                                                     update: true).to_json
+                                                update: true).to_json
 
         response = client.post("pages/#{page_id}/incidents", json)
 
@@ -70,7 +70,7 @@ module Spage
 
       def update(incident, page_id:, id:)
         json = Spage::Serializers::Incident.new(incident,
-                                                     update: true).to_json
+                                                update: true).to_json
         response = client.put("pages/#{page_id}/incidents", id, json)
 
         handle_response(response) do
