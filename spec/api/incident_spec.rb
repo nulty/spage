@@ -154,6 +154,20 @@ RSpec.describe Spage::Api::Incident do
     end
   end
 
+  describe '#scheduled' do
+    context '200 success' do
+      it 'returns list of scheduled incidents' do
+        incidents = VCR.use_cassette('incidents/scheduled') do
+          Spage::Api::Incident.new.scheduled(
+            page_id: 'hmw075ww7tlq'
+          )
+        end
+
+        expect(incidents.all? { |i| i.status == 'scheduled' }).to be(true)
+      end
+    end
+  end
+
   # describe '#delete' do
   #   it 'parses all fields correctly' do
   #     page = VCR.use_cassette('find_page') do
