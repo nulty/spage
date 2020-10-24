@@ -5,19 +5,7 @@ require 'spec_helper'
 RSpec.describe Spage::Api::Incident do
   describe '#all' do
     it 'returns a collection of Incidents' do
-      VCR.use_cassette('all_incidents') do
-        incidents = Spage::Api::Incident.new.all(page_id: 'hmw075ww7tlq')
-
-        expect(incidents).to respond_to(:each)
-        expect(incidents.first).to be_a(Spage::Incident)
-        expect(incidents.first.id).to eq('72vkct8p5tk8')
-      end
-    end
-  end
-
-  describe '#all' do
-    it 'returns a collection of Incidents' do
-      VCR.use_cassette('unresolved_incidents') do
+      VCR.use_cassette('incidents/all') do
         incidents = Spage::Api::Incident.new.all(page_id: 'hmw075ww7tlq')
 
         expect(incidents).to respond_to(:each)
@@ -29,7 +17,7 @@ RSpec.describe Spage::Api::Incident do
 
   describe '#find' do
     it 'returns an Incident' do
-      VCR.use_cassette('find_incident') do
+      VCR.use_cassette('incidents/find') do
         incident = Spage::Api::Incident.new.find(
           page_id: 'hmw075ww7tlq',
           id: '72vkct8p5tk8'
@@ -47,7 +35,7 @@ RSpec.describe Spage::Api::Incident do
         incident = Spage::Incident.new({})
 
         expect {
-          VCR.use_cassette('create_incident_422_incomplete_params') do
+          VCR.use_cassette('incidents/create_422_incomplete_params') do
             Spage::Api::Incident.new
               .create(incident, page_id: 'hmw075ww7tlq')
           end
@@ -59,7 +47,7 @@ RSpec.describe Spage::Api::Incident do
       it 'creates a new incident for component on a page' do
         incident = Spage::Incident.new('name' => 'Created an Incident')
 
-        VCR.use_cassette('create_incident') do
+        VCR.use_cassette('incidents/create') do
           created_incident = Spage::Api::Incident.new
             .create(incident, page_id: 'hmw075ww7tlq')
 
@@ -72,7 +60,7 @@ RSpec.describe Spage::Api::Incident do
   describe '#update' do
     context '200 incident is updated' do
       it 'updates status from investigating to identified' do
-        incident = VCR.use_cassette('find_incident') do
+        incident = VCR.use_cassette('incidents/find') do
           Spage::Api::Incident.new.find(
             page_id: 'hmw075ww7tlq',
             id: '72vkct8p5tk8'
@@ -86,7 +74,7 @@ RSpec.describe Spage::Api::Incident do
         incident.components = {}
         incident.status = 'identified'
 
-        VCR.use_cassette('update_incident_200_incident_is_updated') do
+        VCR.use_cassette('incidents/update_200_incident_is_updated') do
           updated = Spage::Api::Incident.new
             .update(incident,
                     page_id: 'hmw075ww7tlq',
@@ -100,7 +88,7 @@ RSpec.describe Spage::Api::Incident do
 
     context '400 components is invalid ' do
       it 'errors when the components object is invalid' do
-        incident = VCR.use_cassette('find_incident') do
+        incident = VCR.use_cassette('incidents/find') do
           Spage::Api::Incident.new.find(
             page_id: 'hmw075ww7tlq',
             id: '72vkct8p5tk8'
@@ -111,7 +99,7 @@ RSpec.describe Spage::Api::Incident do
 
         incident.instance_variable_set(:@status, 'identified')
 
-        VCR.use_cassette('update_incident_400_components_invalid') do
+        VCR.use_cassette('incidents/update_400_components_invalid') do
           expect {
             Spage::Api::Incident.new
               .update(incident,
