@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components/w0x7fxxlprmx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - bdad7828-93d4-4c00-99bd-97b9ae608ef9
+      X-Runtime:
+      - '0.009321'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Could not authenticate"}'
+  recorded_at: Sat, 24 Oct 2020 14:39:04 GMT
+- request:
+    method: delete
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components/9zcskh91c4f0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Statuspage-Version:
+      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
+      Vary:
+      - Origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 431a0257-7027-46a9-98ef-bf419fa55091
+      X-Runtime:
+      - '0.132765'
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 24 Oct 2020 14:42:14 GMT
+recorded_with: VCR 6.0.0
