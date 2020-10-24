@@ -3,6 +3,21 @@
 require 'spec_helper'
 
 RSpec.describe Spage::Api::Component do
+  describe '#find' do
+    it 'returns an Component' do
+      VCR.use_cassette('components/find') do
+        component = Spage::Api::Component.new.find(
+          page_id: 'hmw075ww7tlq',
+          id: '3sxkhns1ndms'
+        )
+
+        expect(component).to be_a(Spage::Component)
+        expect(component.page_id).to eq('hmw075ww7tlq')
+        expect(component.id).to eq('3sxkhns1ndms')
+      end
+    end
+  end
+
   describe '#create' do
     context '403 missing component body' do
       it 'raises error: component payload is empty' do

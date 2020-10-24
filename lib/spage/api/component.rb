@@ -9,6 +9,14 @@ module Spage
     class Component
       include Api
 
+      def find(page_id:, id:)
+        response = client.get("pages/#{page_id}/components", id)
+
+        handle_response(response) do
+          Spage::Component.new(response.body)
+        end
+      end
+
       def create(component, page_id:)
         json = Spage::Serializers::Component.new(component,
                                                  update: true).to_json
