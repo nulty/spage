@@ -46,6 +46,14 @@ module Spage
           Spage::Component.new(response.body)
         end
       end
+
+      def delete(page_id:, id:)
+        response = client.delete("pages/#{page_id}/components", id)
+
+        handle_response(response) do
+          true
+        end
+      end
     end
 
     private

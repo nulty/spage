@@ -120,4 +120,17 @@ RSpec.describe Spage::Api::Component do
       end
     end
   end
+
+  describe '#delete' do
+    it 'deletes a component and returns true' do
+      result = VCR.use_cassette('components/delete') do
+        Spage::Api::Component.new.delete(
+          page_id: 'hmw075ww7tlq',
+          id: '9zcskh91c4f0'
+        )
+      end
+
+      expect(result).to be(true)
+    end
+  end
 end

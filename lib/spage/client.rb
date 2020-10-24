@@ -30,7 +30,7 @@ module Spage
       make_request(Net::HTTP::Delete, resource, id)
     end
 
-    # rubocop: disable Metrics/MethodLength
+    # rubocop: disable Metrics/MethodLength, Metrics/AbcSize
     def make_request(http_method, resource, id, body = nil)
       path = [@api_version, resource, id].compact.join('/')
       uri = URI::HTTP.build(host: BASE_URL, path: "/#{path}")
@@ -44,13 +44,13 @@ module Spage
       res = Net::HTTP.start(uri.hostname, use_ssl: true) do |http|
         response = http.request(request)
 
-        response.body = JSON.parse(response.body)
+        response.body = JSON.parse(response.body) if response.body
         response
       end
 
       yield(res) if block_given?
       res
     end
-    # rubocop: enable Metrics/MethodLength
+    # rubocop: enable Metrics/MethodLength, Metrics/AbcSize
   end
 end
