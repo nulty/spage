@@ -156,20 +156,16 @@ RSpec.describe Spage::Api::Incident do
     end
   end
 
-  # describe '#delete' do
-  #   it 'parses all fields correctly' do
-  #     page = VCR.use_cassette('find_page') do
-  #       Spage::Api::Page.new.find('hmw075ww7tlq')
-  #     end
-  #     expect(page.url).to be_nil
+  describe '#delete' do
+    it 'deletes an incident' do
+      incident = VCR.use_cassette('incidents/delete') do
+        Spage::Api::Incident.new.delete(
+          page_id: 'hmw075ww7tlq',
+          id: 'w0x7fxxlprmx'
+        )
+      end
 
-  #     page.instance_variable_set(:@url, 'https://example.com')
-
-  #     updated_page = VCR.use_cassette('update_page_400_page_is_missing') do
-  #       Spage::Api::Page.new.update('hmw075ww7tlq', page)
-  #     end
-
-  #     expect(updated_page.body).to eq('error' => 'page is missing')
-  #   end
-  # end
+      expect(incident.id).to eq('w0x7fxxlprmx')
+    end
+  end
 end

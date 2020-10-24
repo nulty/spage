@@ -23,7 +23,11 @@ module Spage
     end
 
     def post(resource, body)
-      make_request(Net::HTTP::Post, resource, id = nil, body)
+      make_request(Net::HTTP::Post, resource, nil, body)
+    end
+
+    def delete(resource, id)
+      make_request(Net::HTTP::Delete, resource, id)
     end
 
     # rubocop: disable Metrics/MethodLength

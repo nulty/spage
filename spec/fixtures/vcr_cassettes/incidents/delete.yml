@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/incidents
+    body:
+      encoding: UTF-8
+      string: w0x7fxxlprmx
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 4c6254a2-1c81-45e2-91af-cd5037071192
+      X-Runtime:
+      - '0.016495'
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"\nProblem:\n  message body does not match declared format\nResolution:\n  when
+        specifying application/json as content-type, you must pass valid application/json
+        in the request''s ''body'' "}'
+  recorded_at: Sat, 24 Oct 2020 10:54:37 GMT
+- request:
+    method: delete
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/incidents/w0x7fxxlprmx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 42a08186-8c1b-4fb1-9de0-a40c556304c8
+      X-Runtime:
+      - '0.110921'
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"gz[bbe1c8acf8295e4cb7dbb90f79ad8534]"
+      X-Statuspage-Version:
+      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"w0x7fxxlprmx","components":[],"created_at":"2020-10-24T10:06:35Z","impact":"maintenance","impact_override":null,"incident_updates":[],"metadata":{},"monitoring_at":null,"name":"Scheduled
+        Maintenance","page_id":"hmw075ww7tlq","postmortem_body":null,"postmortem_body_last_updated_at":null,"postmortem_ignored":false,"postmortem_notified_subscribers":false,"postmortem_notified_twitter":false,"postmortem_published_at":null,"resolved_at":null,"scheduled_auto_completed":true,"scheduled_auto_in_progress":true,"scheduled_for":"2020-10-24T12:00:00Z","scheduled_remind_prior":true,"scheduled_reminded_at":null,"scheduled_until":"2020-10-24T13:00:00Z","shortlink":"http://stspg.io/gx50xtb49503","status":"scheduled","updated_at":"2020-10-24T10:54:48Z"}'
+  recorded_at: Sat, 24 Oct 2020 10:54:49 GMT
+recorded_with: VCR 6.0.0

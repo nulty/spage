@@ -77,6 +77,14 @@ module Spage
           Spage::Incident.new(response.body)
         end
       end
+
+      def delete(page_id:, id:)
+        response = client.delete("pages/#{page_id}/incidents", id)
+
+        handle_response(response) do
+          Spage::Incident.new(response.body)
+        end
+      end
     end
 
     private
