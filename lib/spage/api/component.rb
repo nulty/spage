@@ -9,6 +9,16 @@ module Spage
     class Component
       include Api
 
+      def all(page_id:)
+        response = client.get("pages/#{page_id}/components")
+
+        handle_response(response) do
+          response.body.map do |component|
+            Spage::Component.new(component)
+          end
+        end
+      end
+
       def find(page_id:, id:)
         response = client.get("pages/#{page_id}/components", id)
 

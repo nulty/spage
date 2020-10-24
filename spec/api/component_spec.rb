@@ -3,6 +3,17 @@
 require 'spec_helper'
 
 RSpec.describe Spage::Api::Component do
+  describe '#all' do
+    it 'returns a collection of Components' do
+      VCR.use_cassette('components/all') do
+        components = Spage::Api::Component.new.all(page_id: 'hmw075ww7tlq')
+
+        expect(components).to respond_to(:each)
+        expect(components.first).to be_a(Spage::Component)
+      end
+    end
+  end
+
   describe '#find' do
     it 'returns an Component' do
       VCR.use_cassette('components/find') do

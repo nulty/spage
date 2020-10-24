@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - 4b95e712-f619-4536-b8fa-1d264c53ae74
+      X-Runtime:
+      - '0.045158'
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"gz[3857bb5ea778dd3e82a6dd86b984c72a]"
+      X-Statuspage-Version:
+      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"3sxkhns1ndms","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-08-27T15:35:06Z","group":false,"name":"Results","description":"Results
+        are being updated in time","position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+6c823ccd-ae20-4e96-a0ef-7b396459c04c@notifications.statuspage.io"},{"id":"ybwsxg243q90","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-10-24T09:53:37Z","group":false,"name":"News
+        Articles","description":"News Articles are being updated","position":2,"status":"under_maintenance","showcase":true,"only_show_if_degraded":false,"automation_email":"component+1fb7ba1c-0f95-464a-8a2b-182ee08ac953@notifications.statuspage.io"}]'
+  recorded_at: Sat, 24 Oct 2020 13:20:14 GMT
+recorded_with: VCR 6.0.0
