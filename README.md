@@ -1,5 +1,7 @@
 # Spage
 
+[![Gem Version](https://badge.fury.io/rb/spage.svg)](https://badge.fury.io/rb/spage)
+
 Spage is a Ruby client for integrating Statuspage.io into your ruby app. The idea is for it to be more than just a set of http requests to the server. It tries to model the data on the server for you so you don't have to.
 
 ## Installation
