@@ -16,15 +16,14 @@ jobs:
         ruby: [2.4, 2.5, 2.6, 2.7]
       
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2 
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.node }}
+        ruby-version: ${{ matrix.ruby }}
     - run: bundle install
       name: Bundle
     - run: bundle exec rspec
-        - 
 
 #     - name: Publish to RubyGems
 #       run: |
