@@ -40,8 +40,8 @@ end
 
 ### Client
 
-`Spage::Api::Page.new.all` returns all the pages for your account
-`Spage::Api::Page.new.find(id)` returns a single page
+`Spage::Api::Page.new.all` returns all the pages for your account \
+`Spage::Api::Page.new.find(id)` returns a single page \
 `Spage::Api::Page.new.update(id, page)` updates the page
 
 
