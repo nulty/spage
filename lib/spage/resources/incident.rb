@@ -54,7 +54,7 @@ module Spage
     # rubocop: disable Layout/LineLength
     attr_reader :id, :created_at, :impact, :incident_updates, :monitoring_at, :page_id, :postmortem_body, :postmortem_body_last_updated_at, :postmortem_ignored, :postmortem_notified_subscribers, :postmortem_notified_twitter, :postmortem_published_at, :resolved_at, :shortlink, :updated_at
 
-    attr_accessor :name, :status, :impact_override, :scheduled_for, :scheduled_until, :scheduled_remind_prior, :scheduled_auto_in_progress, :scheduled_auto_completed, :metadata, :deliver_notifications, :auto_transition_deliver_notifications_at_end, :auto_transition_deliver_notifications_at_start, :auto_transition_to_maintenance_state, :auto_transition_to_operational_state, :auto_tweet_at_beginning, :auto_tweet_on_completion, :auto_tweet_on_creation, :auto_tweet_one_hour_before, :backfill_date, :backfilled, :body, :components, :component_ids, :scheduled_auto_transition
+    attr_accessor :name, :status, :impact_override, :scheduled_for, :scheduled_until, :scheduled_remind_prior, :scheduled_reminded_at, :scheduled_auto_in_progress, :scheduled_auto_completed, :metadata, :deliver_notifications, :auto_transition_deliver_notifications_at_end, :auto_transition_deliver_notifications_at_start, :auto_transition_to_maintenance_state, :auto_transition_to_operational_state, :auto_tweet_at_beginning, :auto_tweet_on_completion, :auto_tweet_on_creation, :auto_tweet_one_hour_before, :backfill_date, :backfilled, :body, :components, :component_ids, :scheduled_auto_transition
     # rubocop: enable Layout/LineLength
 
     private
