@@ -4,13 +4,13 @@ module Spage
   # Page resource in statuspage.io
   #
   class Incident
-    # rubocop: disable Metrics/MethodLength, Metrics/AbcSize, Layout/LineLength
+    # rubocop: disable Metrics/MethodLength, Metrics/AbcSize
     def initialize(attrs)
       @id                              = attrs['id']
       @components                      = attrs['components'] # Array of Component
       @impact                          = attrs['impact']
       @impact_override                 = attrs['impact_override']
-      @incident_updates                = attrs['incident_updates'] # Array of IncidentUpdate
+      @incident_updates                = attrs['incident_updates']&.map { |iu| IncidentUpdate.new(iu) }
       @metadata                        = attrs['metadata'] # Hash of values
       @name                            = attrs['name']
       @page_id                         = attrs['page_id']
@@ -49,7 +49,7 @@ module Spage
       @component_ids                                  = attrs['component_ids']
       @scheduled_auto_transition                      = attrs['scheduled_auto_transition']
     end
-    # rubocop: enable Metrics/MethodLength, Metrics/AbcSize, Layout/LineLength
+    # rubocop: enable Metrics/MethodLength, Metrics/AbcSize
 
     # rubocop: disable Layout/LineLength
     attr_reader :id, :created_at, :impact, :incident_updates, :monitoring_at, :page_id, :postmortem_body, :postmortem_body_last_updated_at, :postmortem_ignored, :postmortem_notified_subscribers, :postmortem_notified_twitter, :postmortem_published_at, :resolved_at, :shortlink, :updated_at

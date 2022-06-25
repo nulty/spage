@@ -22,6 +22,10 @@ module Spage
       make_request(Net::HTTP::Put, resource, id, body)
     end
 
+    def patch(resource, id, body)
+      make_request(Net::HTTP::Patch, resource, id, body)
+    end
+
     def post(resource, body)
       make_request(Net::HTTP::Post, resource, nil, body)
     end
