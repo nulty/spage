@@ -6,10 +6,34 @@ RSpec.describe Spage::Api::Component do
   describe '#all' do
     it 'returns a collection of Components' do
       VCR.use_cassette('components/all') do
-        components = Spage::Api::Component.new.all(page_id: 'hmw075ww7tlq')
+        components = Spage::Api::Component.new.all(page_id: 'fmd7kj5n71y9')
 
         expect(components).to respond_to(:each)
         expect(components.first).to be_a(Spage::Component)
+      end
+    end
+
+    context 'with per_page=1&page=2' do
+      let(:page_id) { 'fmd7kj5n71y9' }
+
+      around do |ex|
+        VCR.use_cassette('components/paginated') do
+          ex.run
+        end
+      end
+
+      it 'returns paginated components' do
+        api = Spage::Api::Component.new
+
+        components = api.all(page_id:, per_page: 1, page: 1)
+
+        expect(components.count).to eq(1)
+        expect(components.first.id).to eq('43dn19nz4ym9')
+
+        components = api.all(page_id:, per_page: 1, page: 2)
+
+        expect(components.count).to eq(1)
+        expect(components.first.id).to eq('rc084wr40ngy')
       end
     end
   end
