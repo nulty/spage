@@ -25,12 +25,12 @@ RSpec.describe Spage::Api::Component do
       it 'returns paginated components' do
         api = Spage::Api::Component.new
 
-        components = api.all(page_id:, per_page: 1, page: 1)
+        components = api.all(page_id: page_id, per_page: 1, page: 1)
 
         expect(components.count).to eq(1)
         expect(components.first.id).to eq('43dn19nz4ym9')
 
-        components = api.all(page_id:, per_page: 1, page: 2)
+        components = api.all(page_id: page_id, per_page: 1, page: 2)
 
         expect(components.count).to eq(1)
         expect(components.first.id).to eq('rc084wr40ngy')

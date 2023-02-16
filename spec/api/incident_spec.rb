@@ -25,12 +25,12 @@ RSpec.describe Spage::Api::Incident do
 
       it 'returns paginated incidents' do
         api = Spage::Api::Incident.new
-        incidents = api.all(page_id:, per_page: 1, page: 1)
+        incidents = api.all(page_id: page_id, per_page: 1, page: 1)
 
         expect(incidents.count).to eq(1)
         expect(incidents.first.id).to eq('t3zy7x9tny6h')
 
-        incidents = api.all(page_id:, per_page: 1, page: 2)
+        incidents = api.all(page_id: page_id, per_page: 1, page: 2)
 
         expect(incidents.count).to eq(1)
         expect(incidents.first.id).to eq('pqp4tk19c0l4')
