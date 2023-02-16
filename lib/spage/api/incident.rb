@@ -9,8 +9,8 @@ module Spage
     class Incident
       include Api
 
-      def all(page_id:)
-        response = client.get("pages/#{page_id}/incidents")
+      def all(page_id:, per_page: 100, page: 1)
+        response = client.get("pages/#{page_id}/incidents", query: "per_page=#{per_page}&page=#{page}")
 
         handle_response(response) do
           response.body.map do |incident|

@@ -6,11 +6,34 @@ RSpec.describe Spage::Api::Incident do
   describe '#all' do
     it 'returns a collection of Incidents' do
       VCR.use_cassette('incidents/all') do
-        incidents = Spage::Api::Incident.new.all(page_id: 'hmw075ww7tlq')
+        incidents = Spage::Api::Incident.new.all(page_id: 'fmd7kj5n71y9')
 
         expect(incidents).to respond_to(:each)
         expect(incidents.first).to be_a(Spage::Incident)
-        expect(incidents.first.id).to eq('72vkct8p5tk8')
+        expect(incidents.first.id).to eq('t3zy7x9tny6h')
+      end
+    end
+
+    context 'with per_page=1&page=2' do
+      let(:page_id) { 'fmd7kj5n71y9' }
+
+      around do |ex|
+        VCR.use_cassette('incidents/paginated') do
+          ex.run
+        end
+      end
+
+      it 'returns paginated incidents' do
+        api = Spage::Api::Incident.new
+        incidents = api.all(page_id:, per_page: 1, page: 1)
+
+        expect(incidents.count).to eq(1)
+        expect(incidents.first.id).to eq('t3zy7x9tny6h')
+
+        incidents = api.all(page_id:, per_page: 1, page: 2)
+
+        expect(incidents.count).to eq(1)
+        expect(incidents.first.id).to eq('pqp4tk19c0l4')
       end
     end
   end
