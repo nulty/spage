@@ -1,6 +1,8 @@
 Style/SymbolArray:
   Enabled: false
 
+AllCops:
+  TargetRubyVersion: 2.6
 # Want to be able to assign config
 # without using =
 Style/TrivialAccessors:
