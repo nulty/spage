@@ -1,0 +1,13 @@
+name: Test
+
+# This workflow runs when the branch is pushed/merged to master
+# and when a PR is opened against master
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    uses: './.github/workflows/reusable-test.yml'
