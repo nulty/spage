@@ -16,17 +16,20 @@ module Spage
   autoload :Api, 'spage/api'
   autoload :Page, 'spage/resources/page'
   autoload :Incident, 'spage/resources/incident'
+  autoload :IncidentUpdate, 'spage/resources/incident_update'
   autoload :Component, 'spage/resources/component'
 
   module Api
     autoload :Page, 'spage/api/page'
     autoload :Incident, 'spage/api/incident'
+    autoload :IncidentUpdate, 'spage/api/incident_update'
     autoload :Component, 'spage/api/component'
   end
 
   module Serializers
     autoload :Page, 'spage/serializers/page'
     autoload :Incident, 'spage/serializers/incident'
+    autoload :IncidentUpdate, 'spage/serializers/incident_update'
     autoload :Component, 'spage/serializers/component'
   end
 
