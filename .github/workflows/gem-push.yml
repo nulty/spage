@@ -1,37 +1,24 @@
-name: Ruby Gem
+name: Publish Ruby Gem
 
+# Publish the gem to RubyGems when the git tag is pushed
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+    tags: 'v*'
 jobs:
-  build:
-    name: Build + Publish
+  test:
+    uses: ./.github/workflows/reusable-test.yml
+  publish:
+    name: Publish to RubyGems
+    needs: test
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        ruby: [2.4, 2.5, 2.6, 2.7, 3.0, 3.1, 3.2]
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby 2.6
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-    - run: bundle install
-      name: Bundle
-    - run: bundle exec rspec
-
-#     - name: Publish to RubyGems
-#       run: |
-#         mkdir -p $HOME/.gem
-#         touch $HOME/.gem/credentials
-#         chmod 0600 $HOME/.gem/credentials
-#         printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
-#         gem build *.gemspec
-#         gem push *.gem
-#       env:
-#         GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
+      - run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          echo "Running Successfully"
+          gem build *.gemspec
+          gem push *.gem
+    env:
+      GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
