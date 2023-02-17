@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased](https://github.com/nulty/spage/tree/HEAD)
+
+[Full Changelog](https://github.com/nulty/spage/compare/v0.2.0...v0.3.0)
+
+**Merged pull requests:**
+
+- Add gem publish workflow for GitHub Actions [\#6](https://github.com/nulty/spage/pull/6) ([nulty](https://github.com/nulty))
+- Build against latest rubies [\#5](https://github.com/nulty/spage/pull/5) ([nulty](https://github.com/nulty))
+- Add pagination to Incident and Component clients [\#4](https://github.com/nulty/spage/pull/4) ([nulty](https://github.com/nulty))
+- Change ruby binary workflow [\#3](https://github.com/nulty/spage/pull/3) ([nulty](https://github.com/nulty))
+
 ## [v0.2.0](https://github.com/nulty/spage/tree/v0.2.0) (2020-11-02)
 
 [Full Changelog](https://github.com/nulty/spage/compare/v0.1.0...v0.2.0)
