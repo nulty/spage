@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.statuspage.io/v1/pages/hmw075ww7tlq/components
+    uri: https://api.statuspage.io/v1/pages/fmd7kj5n71y9/components?page=1&per_page=100
     body:
       encoding: US-ASCII
       string: ''
@@ -24,27 +24,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Vary:
-      - Accept-Encoding
-      - Origin
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Date:
+      - Thu, 16 Feb 2023 16:46:00 GMT
       Content-Type:
       - application/json
-      X-Request-Id:
-      - 4b95e712-f619-4536-b8fa-1d264c53ae74
+      X-Statuspage-Version:
+      - 2d2578da4b67b34ed477d75ce19bee6c5884948f
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"d808d47cf5ca25726d77c8272417b273"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.045158'
+      - '0.042766'
+      Server:
+      - AtlassianEdge
+      Expect-Ct:
+      - report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/status-page-web-api",
+        max-age=86400
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Atl-Traceid:
+      - a8487394dbfa1c21
+      Report-To:
+      - '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group":
+        "endpoint-1", "include_subdomains": true, "max_age": 600}'
+      Nel:
+      - '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to":
+        "endpoint-1"}'
+      Strict-Transport-Security:
+      - max-age=63072000; preload
       Transfer-Encoding:
       - chunked
-      Etag:
-      - W/"gz[3857bb5ea778dd3e82a6dd86b984c72a]"
-      X-Statuspage-Version:
-      - 74d6192c1766f9eae00982f412d09eefd4fad2b8
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":"3sxkhns1ndms","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-08-27T15:35:06Z","group":false,"name":"Results","description":"Results
-        are being updated in time","position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+6c823ccd-ae20-4e96-a0ef-7b396459c04c@notifications.statuspage.io"},{"id":"ybwsxg243q90","page_id":"hmw075ww7tlq","group_id":null,"created_at":"2020-08-27T15:32:50Z","updated_at":"2020-10-24T09:53:37Z","group":false,"name":"News
-        Articles","description":"News Articles are being updated","position":2,"status":"under_maintenance","showcase":true,"only_show_if_degraded":false,"automation_email":"component+1fb7ba1c-0f95-464a-8a2b-182ee08ac953@notifications.statuspage.io"}]'
-  recorded_at: Sat, 24 Oct 2020 13:20:14 GMT
-recorded_with: VCR 6.0.0
+      string: '[{"id":"43dn19nz4ym9","page_id":"fmd7kj5n71y9","group_id":null,"created_at":"2022-06-18T19:14:18Z","updated_at":"2022-06-18T19:14:18Z","group":false,"name":"API
+        (example)","description":null,"position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+3cd8c9e7-6884-4867-9e9b-351ae773450a@notifications.statuspage.io","start_date":"2022-06-18"},{"id":"rc084wr40ngy","page_id":"fmd7kj5n71y9","group_id":null,"created_at":"2022-06-18T19:14:18Z","updated_at":"2022-06-18T19:14:18Z","group":false,"name":"Management
+        Portal (example)","description":null,"position":2,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+73c4f429-649f-4f62-a177-5617f53b7ec5@notifications.statuspage.io","start_date":"2022-06-18"}]'
+  recorded_at: Thu, 16 Feb 2023 16:46:00 GMT
+recorded_with: VCR 6.1.0
