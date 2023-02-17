@@ -14,8 +14,8 @@ module Spage
       @api_version = Spage.config.api_version
     end
 
-    def get(resource, id = nil)
-      make_request(Net::HTTP::Get, resource, id)
+    def get(resource, id = nil, query: nil)
+      make_request(Net::HTTP::Get, resource, id, query: query)
     end
 
     def put(resource, id, body)
@@ -31,9 +31,9 @@ module Spage
     end
 
     # rubocop: disable Metrics/MethodLength, Metrics/AbcSize
-    def make_request(http_method, resource, id, body = nil)
+    def make_request(http_method, resource, id, body = nil, query: nil)
       path = [@api_version, resource, id].compact.join('/')
-      uri = URI::HTTP.build(host: BASE_URL, path: "/#{path}")
+      uri = URI::HTTP.build(host: BASE_URL, path: "/#{path}", query: query)
 
       request = http_method.new(uri)
       request.add_field('Authorization', "OAuth #{@api_key}")

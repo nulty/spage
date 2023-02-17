@@ -9,8 +9,8 @@ module Spage
     class Component
       include Api
 
-      def all(page_id:)
-        response = client.get("pages/#{page_id}/components")
+      def all(page_id:, per_page: 100, page: 1)
+        response = client.get("pages/#{page_id}/components", query: "per_page=#{per_page}&page=#{page}")
 
         handle_response(response) do
           response.body.map do |component|

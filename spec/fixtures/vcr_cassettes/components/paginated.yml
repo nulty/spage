@@ -1,0 +1,199 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/fmd7kj5n71y9/components?per_page=1&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 16 Feb 2023 16:36:21 GMT
+      Content-Type:
+      - application/json
+      X-Statuspage-Version:
+      - 2d2578da4b67b34ed477d75ce19bee6c5884948f
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"d808d47cf5ca25726d77c8272417b273"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.049151'
+      Server:
+      - AtlassianEdge
+      Expect-Ct:
+      - report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/status-page-web-api",
+        max-age=86400
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Atl-Traceid:
+      - a0dfbdee7e1b0f9d
+      Report-To:
+      - '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group":
+        "endpoint-1", "include_subdomains": true, "max_age": 600}'
+      Nel:
+      - '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to":
+        "endpoint-1"}'
+      Strict-Transport-Security:
+      - max-age=63072000; preload
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"43dn19nz4ym9","page_id":"fmd7kj5n71y9","group_id":null,"created_at":"2022-06-18T19:14:18Z","updated_at":"2022-06-18T19:14:18Z","group":false,"name":"API
+        (example)","description":null,"position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+3cd8c9e7-6884-4867-9e9b-351ae773450a@notifications.statuspage.io","start_date":"2022-06-18"},{"id":"rc084wr40ngy","page_id":"fmd7kj5n71y9","group_id":null,"created_at":"2022-06-18T19:14:18Z","updated_at":"2022-06-18T19:14:18Z","group":false,"name":"Management
+        Portal (example)","description":null,"position":2,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+73c4f429-649f-4f62-a177-5617f53b7ec5@notifications.statuspage.io","start_date":"2022-06-18"}]'
+  recorded_at: Thu, 16 Feb 2023 16:36:21 GMT
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/fmd7kj5n71y9/components?page=1&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 16 Feb 2023 16:40:26 GMT
+      Content-Type:
+      - application/json
+      X-Statuspage-Version:
+      - 2d2578da4b67b34ed477d75ce19bee6c5884948f
+      Link:
+      - "<https://api.statuspage.io/v1/pages/fmd7kj5n71y9/components?page=2&per_page=1>;
+        rel='next'"
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"8bb562d025477b58e9fffed8e9ea73ed"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.048744'
+      Server:
+      - AtlassianEdge
+      Expect-Ct:
+      - report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/status-page-web-api",
+        max-age=86400
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Atl-Traceid:
+      - 83722e4d4864fd34
+      Report-To:
+      - '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group":
+        "endpoint-1", "include_subdomains": true, "max_age": 600}'
+      Nel:
+      - '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to":
+        "endpoint-1"}'
+      Strict-Transport-Security:
+      - max-age=63072000; preload
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"43dn19nz4ym9","page_id":"fmd7kj5n71y9","group_id":null,"created_at":"2022-06-18T19:14:18Z","updated_at":"2022-06-18T19:14:18Z","group":false,"name":"API
+        (example)","description":null,"position":1,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+3cd8c9e7-6884-4867-9e9b-351ae773450a@notifications.statuspage.io","start_date":"2022-06-18"}]'
+  recorded_at: Thu, 16 Feb 2023 16:40:26 GMT
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/fmd7kj5n71y9/components?page=2&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 16 Feb 2023 16:40:27 GMT
+      Content-Type:
+      - application/json
+      X-Statuspage-Version:
+      - 2d2578da4b67b34ed477d75ce19bee6c5884948f
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"24e0e9be8140849a50f870fa5a9c6767"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.050584'
+      Server:
+      - AtlassianEdge
+      Expect-Ct:
+      - report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/status-page-web-api",
+        max-age=86400
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Atl-Traceid:
+      - 9e5510fd279b0736
+      Report-To:
+      - '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group":
+        "endpoint-1", "include_subdomains": true, "max_age": 600}'
+      Nel:
+      - '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to":
+        "endpoint-1"}'
+      Strict-Transport-Security:
+      - max-age=63072000; preload
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"rc084wr40ngy","page_id":"fmd7kj5n71y9","group_id":null,"created_at":"2022-06-18T19:14:18Z","updated_at":"2022-06-18T19:14:18Z","group":false,"name":"Management
+        Portal (example)","description":null,"position":2,"status":"operational","showcase":true,"only_show_if_degraded":false,"automation_email":"component+73c4f429-649f-4f62-a177-5617f53b7ec5@notifications.statuspage.io","start_date":"2022-06-18"}]'
+  recorded_at: Thu, 16 Feb 2023 16:40:27 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/fmd7kj5n71y9/incidents?page=1&per_page=1
+
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 16 Feb 2023 16:28:01 GMT
+      Content-Type:
+      - application/json
+      X-Statuspage-Version:
+      - 2d2578da4b67b34ed477d75ce19bee6c5884948f
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"5a252ea894a3bd81a8a111e8f45f5ac7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.048972'
+      Server:
+      - AtlassianEdge
+      Expect-Ct:
+      - report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/status-page-web-api",
+        max-age=86400
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Atl-Traceid:
+      - b0964bd3a9231bef
+      Report-To:
+      - '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group":
+        "endpoint-1", "include_subdomains": true, "max_age": 600}'
+      Nel:
+      - '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to":
+        "endpoint-1"}'
+      Strict-Transport-Security:
+      - max-age=63072000; preload
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":"Inc #3","status":"investigating","created_at":"2023-02-16T16:05:25.208Z","updated_at":"2023-02-16T16:05:25.242Z","monitoring_at":null,"resolved_at":null,"impact":"none","shortlink":"https://stspg.io/h2q1ch330hpj","scheduled_for":null,"scheduled_until":null,"scheduled_remind_prior":false,"scheduled_reminded_at":null,"impact_override":null,"scheduled_auto_in_progress":false,"scheduled_auto_completed":false,"metadata":{},"started_at":"2023-02-16T16:05:25.202Z","id":"t3zy7x9tny6h","page_id":"fmd7kj5n71y9","incident_updates":[{"status":"investigating","body":"We
+        are currently investigating this issue.","created_at":"2023-02-16T16:05:25.240Z","wants_twitter_update":false,"twitter_updated_at":null,"updated_at":"2023-02-16T16:05:25.240Z","display_at":"2023-02-16T16:05:25.240Z","deliver_notifications":true,"tweet_id":null,"id":"n7q8zjfldd6z","incident_id":"t3zy7x9tny6h","custom_tweet":null,"affected_components":null}],"postmortem_body":null,"postmortem_body_last_updated_at":null,"postmortem_ignored":false,"postmortem_published_at":null,"postmortem_notified_subscribers":false,"postmortem_notified_twitter":false,"components":[]}]'
+  recorded_at: Thu, 16 Feb 2023 16:28:02 GMT
+- request:
+    method: get
+    uri: https://api.statuspage.io/v1/pages/fmd7kj5n71y9/incidents?page=2&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.statuspage.io
+      Authorization:
+      - "<Oauth *****>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 16 Feb 2023 16:28:02 GMT
+      Content-Type:
+      - application/json
+      X-Statuspage-Version:
+      - 2d2578da4b67b34ed477d75ce19bee6c5884948f
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"e437d47ae5fee1f0a5d54c03bf89c87a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.059017'
+      Server:
+      - AtlassianEdge
+      Expect-Ct:
+      - report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/status-page-web-api",
+        max-age=86400
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Atl-Traceid:
+      - 8bec7661ef500be9
+      Report-To:
+      - '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group":
+        "endpoint-1", "include_subdomains": true, "max_age": 600}'
+      Nel:
+      - '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to":
+        "endpoint-1"}'
+      Strict-Transport-Security:
+      - max-age=63072000; preload
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":"Inc #2","status":"investigating","created_at":"2023-02-16T16:05:24.801Z","updated_at":"2023-02-16T16:05:24.842Z","monitoring_at":null,"resolved_at":null,"impact":"none","shortlink":"https://stspg.io/jxhzl14zpqzm","scheduled_for":null,"scheduled_until":null,"scheduled_remind_prior":false,"scheduled_reminded_at":null,"impact_override":null,"scheduled_auto_in_progress":false,"scheduled_auto_completed":false,"metadata":{},"started_at":"2023-02-16T16:05:24.794Z","id":"pqp4tk19c0l4","page_id":"fmd7kj5n71y9","incident_updates":[{"status":"investigating","body":"We
+        are currently investigating this issue.","created_at":"2023-02-16T16:05:24.839Z","wants_twitter_update":false,"twitter_updated_at":null,"updated_at":"2023-02-16T16:05:24.839Z","display_at":"2023-02-16T16:05:24.839Z","deliver_notifications":true,"tweet_id":null,"id":"yn8l5t9rvkfs","incident_id":"pqp4tk19c0l4","custom_tweet":null,"affected_components":null}],"postmortem_body":null,"postmortem_body_last_updated_at":null,"postmortem_ignored":false,"postmortem_published_at":null,"postmortem_notified_subscribers":false,"postmortem_notified_twitter":false,"components":[]}]'
+  recorded_at: Thu, 16 Feb 2023 16:28:02 GMT
+recorded_with: VCR 6.1.0
